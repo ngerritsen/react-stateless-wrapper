@@ -1,0 +1,30 @@
+{
+  "name": "react-stateless-wrapper",
+  "version": "1.0.0",
+  "description": "Wraps React stateless components into regular components",
+  "main": "react-stateless-wrapper.js",
+  "scripts": {
+    "test": "./node_modules/.bin/karma start"
+  },
+  "author": "Niels Gerritsen",
+  "repository": {
+    "type": "git",
+    "url": "ngerritsen/react-stateless-wrapper"
+  },
+  "homepage": "http://www.nielsgerritsen.com",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-loader": "^5.3.2",
+    "jasmine-core": "^2.3.4",
+    "karma": "^0.13.10",
+    "karma-chrome-launcher": "^0.2.0",
+    "karma-jasmine": "^0.3.6",
+    "karma-webpack": "^1.7.0",
+    "react": "^0.14.0-rc1",
+    "react-dom": "^0.14.0-rc1",
+    "webpack": "^1.12.2"
+  },
+  "dependencies": {
+    "react": "^0.14.0-rc1"
+  }
+}
