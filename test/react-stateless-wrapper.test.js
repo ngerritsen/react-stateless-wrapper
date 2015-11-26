@@ -15,4 +15,9 @@ define('react stateless wrapper', () => {
     let message = TestUtils.findRenderedDOMComponentWithClass(test, 'test-class')
     expect(message.innerHTML).toEqual('test')
   })
+
+  it('has the stateless component displayName', () => {
+    let WrappedTestComponent = wrap(TestComponent)
+    expect(WrappedTestComponent.displayName).toEqual('TestComponent')
+  })
 })
