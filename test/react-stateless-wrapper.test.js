@@ -1,19 +1,19 @@
 import React from 'react'
-import TestUtils from 'react/lib/ReactTestUtils'
-import { wrap } from '../react-stateless-wrapper'
+import TestUtils from 'react-addons-test-utils'
+import { wrap } from '../lib/react-stateless-wrapper'
 
 define('react stateless wrapper', () => {
-  let TestComponent = ({message}) => (
+  const TestComponent = ({message}) => (
     <div>
       <p className="test-class">{message}</p>
     </div>
   )
 
   it('works', () => {
-    let WrappedTestComponent = wrap(TestComponent)
-    let test = TestUtils.renderIntoDocument(<WrappedTestComponent message="test"/>)
-    let message = TestUtils.findRenderedDOMComponentWithClass(test, 'test-class')
-    let messages = TestUtils.scryRenderedDOMComponentsWithClass(test, 'test-class')
+    const WrappedTestComponent = wrap(TestComponent)
+    const test = TestUtils.renderIntoDocument(<WrappedTestComponent message="test"/>)
+    const message = TestUtils.findRenderedDOMComponentWithClass(test, 'test-class')
+    const messages = TestUtils.scryRenderedDOMComponentsWithClass(test, 'test-class')
 
     expect(message.innerHTML).toEqual('test')
     expect(messages.length).toEqual(1)
