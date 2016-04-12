@@ -1,6 +1,6 @@
 import React from 'react'
 import TestUtils from 'react-addons-test-utils'
-import { wrap } from '../lib/react-stateless-wrapper'
+import { wrap } from '../react-stateless-wrapper'
 
 define('react stateless wrapper', () => {
   const TestComponent = ({message}) => (
