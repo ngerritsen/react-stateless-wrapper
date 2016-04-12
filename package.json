@@ -1,6 +1,6 @@
 {
   "name": "react-stateless-wrapper",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Wraps React stateless components into regular components",
   "main": "react-stateless-wrapper.js",
   "scripts": {
