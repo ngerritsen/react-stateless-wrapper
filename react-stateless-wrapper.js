@@ -1,19 +1,18 @@
 var React = require('react')
 
 function wrap(statelessComponent) {
-  const staticProperties = Object.keys(statelessComponent)
-    .reduce((obj, key) => {
-      obj[key] = statelessComponent[key];
-      return obj;
-    }, {});
+  var reactClass = {}
 
-  return React.createClass({
-    ...staticProperties,
-    displayName: statelessComponent.name || statelessComponent.displayName,
-    render: function() {
-      return statelessComponent(this.props, this.context);
-    }
+  Object.keys(statelessComponent).forEach(function (key) {
+    reactClass[key] = statelessComponent[key];
   });
+
+  reactClass.displayName = statelessComponent.name || statelessComponent.displayName;
+  reactClass.render = function() {
+    return statelessComponent(this.props, this.context);
+  };
+
+  return React.createClass(reactClass);
 }
 
 module.exports.wrap = wrap;
