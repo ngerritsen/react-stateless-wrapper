@@ -2,7 +2,7 @@ import React from 'react'
 import TestUtils from 'react-addons-test-utils'
 import { wrap } from '../react-stateless-wrapper'
 
-define('react stateless wrapper', () => {
+describe('react stateless wrapper', () => {
   const TestComponent = ({message}) => (
     <div>
       <p className="test-class">{message}</p>
@@ -20,7 +20,23 @@ define('react stateless wrapper', () => {
   })
 
   it('has the stateless component displayName', () => {
-    let WrappedTestComponent = wrap(TestComponent)
+    const WrappedTestComponent = wrap(TestComponent)
     expect(WrappedTestComponent.displayName).toEqual('TestComponent')
+  })
+
+  it('transfers static properties', () => {
+    const TestComponentWithStaticProperties = ({message}) => (
+      <div>
+        <p className="test-class">{message}</p>
+      </div>
+    )
+
+    TestComponentWithStaticProperties.contextTypes = { a: React.PropTypes.number }
+    TestComponentWithStaticProperties.propTypes = { b: React.PropTypes.number }
+
+    const WrappedTestComponent = wrap(TestComponentWithStaticProperties)
+
+    expect(WrappedTestComponent.contextTypes).toEqual({ a: React.PropTypes.number })
+    expect(WrappedTestComponent.propTypes).toEqual({ b: React.PropTypes.number })
   })
 })
