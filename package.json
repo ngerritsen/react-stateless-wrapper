@@ -1,6 +1,6 @@
 {
   "name": "react-stateless-wrapper",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Wraps React stateless components into regular components",
   "main": "react-stateless-wrapper.js",
   "scripts": {
@@ -9,7 +9,7 @@
   "author": "Niels Gerritsen",
   "repository": {
     "type": "git",
-    "url": "https://gitlab.com/ngerritsen/react-stateless-wrapper"
+    "url": "https://github.com/ngerritsen/react-stateless-wrapper"
   },
   "license": "ISC",
   "devDependencies": {
